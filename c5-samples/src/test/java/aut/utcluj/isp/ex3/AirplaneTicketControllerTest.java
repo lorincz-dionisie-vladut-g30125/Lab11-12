@@ -36,7 +36,7 @@ public class AirplaneTicketControllerTest {
         final AirplaneTicket airplaneTicket = airplaneTicketOptional.get();
         Assert.assertEquals("Id should be ID-11", "ID-11", airplaneTicket.getId());
         Assert.assertEquals("Price should be 20", 20D, airplaneTicket.getPrice(), 0);
-        Assert.assertEquals("Destination should be 'Cluj-Napoca'", "Cluj-Napoca", airplaneTicket.getDestination());
+        Assert.assertEquals("Destination should be 'Cluj Napoca'", "Cluj-Napoca", airplaneTicket.getDestination());
     }
 
     @Test
@@ -56,7 +56,7 @@ public class AirplaneTicketControllerTest {
     public void shouldRemoveTicketById() {
         final AirplaneTicketController airplaneTicketController = new AirplaneTicketController();
         airplaneTicketController.addNewTicket(new AirplaneTicket("ID-11", 20D, "Cluj-Napoca"));
-        airplaneTicketController.addNewTicket(new AirplaneTicket("ID-12", 20D, "Cluj-Napoca"));
+        airplaneTicketController.addNewTicket(new AirplaneTicket("ID-12", 20D, "Cluj Napoca"));
         Assert.assertEquals("Number of tickets should be 2", 2, airplaneTicketController.getTotalNumberOfTickets());
 
         // remove non existent ticket
@@ -82,7 +82,7 @@ public class AirplaneTicketControllerTest {
     public void shouldUpdateTicketDestination() {
         final AirplaneTicketController airplaneTicketController = new AirplaneTicketController();
         airplaneTicketController.addNewTicket(new AirplaneTicket("ID-11", 20D, "Cluj-Napoca"));
-        airplaneTicketController.addNewTicket(new AirplaneTicket("ID-12", 20D, "Cluj-Napoca"));
+        airplaneTicketController.addNewTicket(new AirplaneTicket("ID-12", 20D, "Cluj  Napoca"));
 
         // update ticket with id 11
         airplaneTicketController.updateTicketDestination("ID-11", "New Destination");
@@ -111,7 +111,7 @@ public class AirplaneTicketControllerTest {
         final AirplaneTicketController airplaneTicketController = new AirplaneTicketController();
         airplaneTicketController.addNewTicket(new AirplaneTicket("ID-1", 10D, "Cluj-Napoca"));
         airplaneTicketController.addNewTicket(new AirplaneTicket("ID-2", 12D, "Timisoara"));
-        airplaneTicketController.addNewTicket(new AirplaneTicket("ID-3", 8D, "Baia Mare"));
+        airplaneTicketController.addNewTicket(new AirplaneTicket("ID-3", 8D, "Baia-Mare"));
         Assert.assertEquals("Number of tickets should be 3", 3, airplaneTicketController.getTotalNumberOfTickets());
 
         // asserts
@@ -132,7 +132,7 @@ public class AirplaneTicketControllerTest {
         airplaneTicketController.addNewTicket(new AirplaneTicket("ID-1", 10D, "Cluj-Napoca"));
         airplaneTicketController.addNewTicket(new AirplaneTicket("ID-2", 12D, "Timisoara"));
         airplaneTicketController.addNewTicket(new AirplaneTicket("ID-3", 8D, "Baia Mare"));
-        airplaneTicketController.addNewTicket(new AirplaneTicket("ID-4", 9D, "Cluj-Napoca"));
+        airplaneTicketController.addNewTicket(new AirplaneTicket("ID-4", 9D, "Cluj Napoca"));
         airplaneTicketController.addNewTicket(new AirplaneTicket("ID-5", 11D, "Cluj-Napoca"));
         Assert.assertEquals("Number of tickets should be 5", 5, airplaneTicketController.getTotalNumberOfTickets());
 
